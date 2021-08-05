@@ -44,7 +44,6 @@ function HW2() {
             <hr />
             homeworks 2
             <Affairs
-                // filterAffairs={filterAffairs}
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
