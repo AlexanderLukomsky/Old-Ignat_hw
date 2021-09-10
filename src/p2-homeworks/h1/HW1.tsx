@@ -1,4 +1,4 @@
-import React from 'react'
+import './hw1.scss'
 import Message from './Message'
 
 const messageData = {
@@ -10,23 +10,16 @@ const messageData = {
 
 function HW1() {
     return (
-        <div>
-            <hr />
-            homeworks 1
-
-            {/*should work (должно работать)*/}
-
+        <div className={'hw1'}>
+            <div className={'hw1__title'}>
+                homeworks 1
+            </div>
             <Message
                 avatar={messageData.avatar}
                 name={messageData.name}
                 message={messageData.message}
                 time={messageData.time}
             />
-
-            < hr />
-            {/* для личного творчества, могу проверить*/}
-            {/*<AlternativeMessage/> */}
-            <hr />
         </div>
     )
 }

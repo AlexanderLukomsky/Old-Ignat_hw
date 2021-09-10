@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Affairs from './Affairs'
-
+import './hw2.scss'
 // types
 export type AffairPriorityType = 'high' | 'low' | 'middle'
 export type AffairType = {
@@ -21,7 +21,6 @@ const defaultAffairs: Array<AffairType> = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => {
-    console.log(filter);
     if (filter === 'all') return affairs
     if (filter === 'high') return affairs.filter(p => p.priority === 'high')
     if (filter === 'middle') return affairs.filter(p => p.priority === 'middle')
@@ -40,9 +39,10 @@ function HW2() {
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
-        <div>
-            <hr />
-            homeworks 2
+        <div className={'hw2'}>
+            <div className={'hw2__title'}>
+                homeworks 2
+            </div>
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}

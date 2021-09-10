@@ -22,14 +22,14 @@ function Affairs(props: AffairsPropsType) {
     const setLow = (e: MouseEvent<HTMLButtonElement>) => { props.setFilter('low') }
 
     return (
-        <div>
-
-            {mappedAffairs}
-
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+        <div className={'hw2__container'}>
+            <div className={'hw2__list'}>
+                {mappedAffairs}
+            </div>
+            <button className={'hw2__btn'} onClick={setAll}>All</button>
+            <button className={'hw2__btn'} onClick={setHigh}>High</button>
+            <button className={'hw2__btn'} onClick={setMiddle}>Middle</button>
+            <button className={'hw2__btn'} onClick={setLow}>Low</button>
         </div>
     )
 }

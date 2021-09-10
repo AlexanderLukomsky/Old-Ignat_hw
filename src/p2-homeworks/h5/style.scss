@@ -1,0 +1,115 @@
+.hw5 {
+  &__menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &__burger {
+    padding: 0 30px;
+    z-index: 101;
+    position: relative;
+    &-bar1,
+    &-bar2,
+    &-bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  }
+  &__error-page {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgb(190, 184, 184);
+      border: 2px solid transparent;
+      &:hover {
+        color: rgb(148, 144, 144);
+        font-size: 38px;
+        border: 0px solid transparent;
+      }
+    }
+  }
+}
+.open-menu {
+  .hw5__burger {
+    &-bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    &-bar2 {
+      opacity: 0;
+    }
+    &-bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+  .hw5__navbar {
+    animation-name: open-menu;
+    animation-duration: 0.45s;
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    position: absolute;
+    width: 100%;
+    padding: 20px 0px;
+    z-index: 100;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    min-height: 350px;
+    li {
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+      }
+      &:last-child {
+        a {
+          color: rgb(190, 184, 184);
+        }
+      }
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+}
+@keyframes open-menu {
+  from {
+    opacity: 0;
+    top: -100px;
+  }
+  to {
+    opacity: 1;
+    top: 30px;
+  }
+}
+@keyframes hidde-navbar {
+  from {
+    opacity: 0;
+    top: -250px;
+    height: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 30px;
+    height: 0;
+  }
+}

@@ -1,4 +1,3 @@
-import s from './Message.module.scss'
 type propsType = {
     avatar: string
     name: string
@@ -7,15 +6,15 @@ type propsType = {
 }
 function Message(props: propsType) {
     return (
-        <div className={s.message}>
-            <div className={s.message__image} >
+        <div className={'hw1__message message'}>
+            <div className={'message__image'} >
                 <img src={props.avatar} alt="" />
             </div>
-            <div className={s.message__box}>
-                <div className={s.message__title}>
+            <div className={'message__box'}>
+                <div className={'message__title'}>
                     {props.name}
                 </div>
-                <p className={s.message__text}>
+                <p className={'message__text'}>
                     {props.message}
                     <span>
                         {props.time}

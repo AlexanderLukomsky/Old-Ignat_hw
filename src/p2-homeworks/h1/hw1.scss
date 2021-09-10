@@ -1,0 +1,68 @@
+.hw1 {
+  padding: 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  &__message {
+    &.message {
+      display: flex;
+      border-radius: 10px;
+      background-image: linear-gradient(to right, #141e30, #243b55);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      max-width: 600px;
+      padding: 10px;
+    }
+    .message {
+      &__image {
+        align-self: flex-end;
+        margin-right: 30px;
+        img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+        }
+      }
+      &__box {
+        background-color: #fff;
+        width: 100%;
+        position: relative;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -24px;
+          bottom: 0;
+
+          width: 0;
+          height: 0;
+          border-top: 25px solid transparent;
+          border-right: 25px solid #fff;
+        }
+      }
+      &__title {
+        font-size: 20px;
+        padding: 5px 10px;
+      }
+
+      &__text {
+        font-size: 18px;
+        color: #000;
+        padding: 0px 10px 35px 10px;
+        position: relative;
+        span {
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

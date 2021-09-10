@@ -7,8 +7,8 @@ type AffairPropsType = {
 }
 
 function Affair(props: AffairPropsType) {
-    console.log(props);
     const style = {
+        fontSize: '14px',
         color: (props.affair.priority === 'high') ? 'red' :
             (props.affair.priority === 'middle') ? 'orange' :
                 'green',
@@ -16,14 +16,14 @@ function Affair(props: AffairPropsType) {
     }
     const deleteCallback = () => { props.deleteAffairCallback(props.affair._id) }
     return (
-        <div>
-            <span>
+        <div className={'hw2__item'}>
+            <span className={'hw2__item_title'}>
                 {props.affair.name}
             </span>
             <span style={style}>
                 {props.affair.priority}
             </span>
-            <button onClick={deleteCallback}>X</button>
+            <button className={'hw2__item_btn'} onClick={deleteCallback}>X</button>
         </div>
     )
 }
