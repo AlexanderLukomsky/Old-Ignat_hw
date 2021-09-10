@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
-import s from './HW4.module.css'
+import './hw4.scss'
 import SuperButton from './common/c2-SuperButton/SuperButton'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
@@ -18,21 +18,22 @@ function HW4() {
 
     const [checked, setChecked] = useState<boolean>(false)
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
-
+    const onFocus = () => {
+        setText('')
+    }
     return (
-        <div>
-            <hr />
-            homeworks 4
-            <div className={s.column}>
+        <div className={'hw4 homeworks'}>
+            <div className={'hw4__title title'}>
+                homeworks 4
+            </div>
+
+            <div className={'hw4__container'}>
                 <SuperInputText
                     value={text}
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                // spanClassName={s.testSpanError}
-                />
-                <SuperInputText
-                    className={s.blue}
+                    spanClassName={''}
                 />
                 <SuperButton>
                     default
@@ -51,21 +52,12 @@ function HW4() {
                     checked={checked}
                     onChangeChecked={setChecked}
                 >
-                    some text {/*// этот текст попадёт в children*/}
+                    some text
                 </SuperCheckbox>
-
-                {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange} >
                     some text -2
                 </SuperCheckbox>
             </div>
-
-            <hr />
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperInputText/>*/}
-            {/*<AlternativeSuperButton/>*/}
-            {/*<AlternativeSuperCheckbox/>*/}
-            <hr />
         </div>
     )
 }

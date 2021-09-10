@@ -10,8 +10,8 @@ const messageData = {
 
 function HW1() {
     return (
-        <div className={'hw1'}>
-            <div className={'hw1__title'}>
+        <div className={'hw1 homeworks'}>
+            <div className={'hw1__title title'}>
                 homeworks 1
             </div>
             <Message

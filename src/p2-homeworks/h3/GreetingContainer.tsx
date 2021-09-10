@@ -13,11 +13,12 @@ type GreetingContainerPropsType = {
 // более современный и удобный для про :)
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({ users, addUserCallback }) => { // деструктуризация пропсов
-    const [name, setName] = useState<string>('') // need to fix any
-    const [error, setError] = useState<string>('') // need to fix any
+    const [name, setName] = useState<string>('')
+    const [error, setError] = useState<string>('')
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
         setName(e.currentTarget.value)
+        setError('')
     }
     const addUser = () => {
         const regExp = RegExp(/^[a-zA-Z]+$/)
@@ -32,7 +33,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({ users, addUse
         setError('')
     }
 
-    const totalUsers = users.length // need to fix
+    const totalUsers = users.length
 
     return (
         <Greeting

@@ -1,6 +1,4 @@
 import React, { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent } from 'react'
-import s from './SuperInputText.module.css'
-
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
@@ -32,8 +30,8 @@ const SuperInputText: React.FC<SuperInputTextPropsType> =
             onKeyPress && onKeyPress(e);
             onEnter && e.key === 'Enter' && onEnter()
         }
-        const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`
-        const finalInputClassName = `${error ? s.errorInput : s.superInput}` // need to fix with (?:) and s.superInput
+        const finalSpanClassName = `${error ? 'hw4__span visible' : 'hw4__span'}`
+        const finalInputClassName = `${error ? 'hw4__input error-input' : 'hw4__input'}`
         return (
             <>
                 <input
@@ -44,7 +42,9 @@ const SuperInputText: React.FC<SuperInputTextPropsType> =
                     value={props.value}
                     {...props}
                 />
-                {error && <span className={finalSpanClassName}>{error}</span>}
+                <div className={'hw4__error-container'}>
+                    {error && <span className={finalSpanClassName}>{error}</span>}
+                </div>
             </>
         )
     }
